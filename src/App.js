@@ -48,7 +48,9 @@ class Game extends React.Component {
     this.state = {
       history: [
         {
-          squares: Array(9).fill(null)
+          squares: Array(9).fill(null),
+          lastStepCoordinates: [null, null],
+          lastStepPlayer: null,
         }
       ],
       stepNumber: 0,
@@ -67,7 +69,9 @@ class Game extends React.Component {
     this.setState({
       history: history.concat([
         {
-          squares: squares
+          squares: squares,
+          lastStepCoordinates: [i % 3 + 1, Math.floor(i / 3) + 1],
+          lastStepPlayer: squares[i],
         }
       ]),
       stepNumber: history.length,
@@ -94,6 +98,7 @@ class Game extends React.Component {
       return (
         <li key={move}>
           <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          {step.lastStepPlayer && <span>{` ${step.lastStepPlayer} at (${step.lastStepCoordinates[0]}, ${step.lastStepCoordinates[1]})`}</span>}
         </li>
       );
     });
