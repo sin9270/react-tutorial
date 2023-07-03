@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# React Tutorial
+Reactの[旧チュートリアル](https://ja.legacy.reactjs.org/tutorial/tutorial.html)のtic-tac-toeの最小限の構成での実装。
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
